@@ -167,7 +167,7 @@ public class VentanaCalculadora extends JFrame {
                 usuarioIngresar.setText("1");
                 String nuevoTexto = usuarioIngresar.getText();
                 if (!nuevoTexto.isEmpty()) {
-                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    acumulador.append(nuevoTexto).append(""); // concatena
                     usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
                 }
 
@@ -180,7 +180,7 @@ public class VentanaCalculadora extends JFrame {
                 usuarioIngresar.setText("2");
                 String nuevoTexto = usuarioIngresar.getText();
                 if (!nuevoTexto.isEmpty()) {
-                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    acumulador.append(nuevoTexto).append(""); // concatena
                     usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
                 }
             }
@@ -192,7 +192,7 @@ public class VentanaCalculadora extends JFrame {
                 usuarioIngresar.setText("3");
                 String nuevoTexto = usuarioIngresar.getText();
                 if (!nuevoTexto.isEmpty()) {
-                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    acumulador.append(nuevoTexto).append(""); // concatena
                     usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
                 }
             }
@@ -204,7 +204,7 @@ public class VentanaCalculadora extends JFrame {
                 usuarioIngresar.setText("4");
                 String nuevoTexto = usuarioIngresar.getText();
                 if (!nuevoTexto.isEmpty()) {
-                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    acumulador.append(nuevoTexto).append(""); // concatena
                     usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
                 }
             }
@@ -216,7 +216,7 @@ public class VentanaCalculadora extends JFrame {
                 usuarioIngresar.setText("5");
                 String nuevoTexto = usuarioIngresar.getText();
                 if (!nuevoTexto.isEmpty()) {
-                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    acumulador.append(nuevoTexto).append(""); // concatena
                     usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
                 }
             }
@@ -228,7 +228,7 @@ public class VentanaCalculadora extends JFrame {
                 usuarioIngresar.setText("6");
                 String nuevoTexto = usuarioIngresar.getText();
                 if (!nuevoTexto.isEmpty()) {
-                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    acumulador.append(nuevoTexto).append(""); // concatena
                     usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
                 }
             }
@@ -240,7 +240,7 @@ public class VentanaCalculadora extends JFrame {
                 usuarioIngresar.setText("7");
                 String nuevoTexto = usuarioIngresar.getText();
                 if (!nuevoTexto.isEmpty()) {
-                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    acumulador.append(nuevoTexto).append(""); // concatena
                     usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
                 }
             }
@@ -252,7 +252,7 @@ public class VentanaCalculadora extends JFrame {
                 usuarioIngresar.setText("8");
                 String nuevoTexto = usuarioIngresar.getText();
                 if (!nuevoTexto.isEmpty()) {
-                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    acumulador.append(nuevoTexto).append(""); // concatena
                     usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
                 }
             }
@@ -264,7 +264,7 @@ public class VentanaCalculadora extends JFrame {
                 usuarioIngresar.setText("9");
                 String nuevoTexto = usuarioIngresar.getText();
                 if (!nuevoTexto.isEmpty()) {
-                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    acumulador.append(nuevoTexto).append(""); // concatena
                     usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
                 }
             }
@@ -308,7 +308,7 @@ public class VentanaCalculadora extends JFrame {
                 String nuevoTexto = usuarioIngresar.getText();
                 if (!nuevoTexto.isEmpty()) {
                     acumulador.append(nuevoTexto).append("\n"); // concatena
-                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                    usuarioIngresar.setText(acumulador.toString());   // actualiza JTextArea
                 }
             }
         });
@@ -347,14 +347,20 @@ public class VentanaCalculadora extends JFrame {
                         JOptionPane.showMessageDialog(null, "No puede dejar este campo vacio");
                         return;
                     }
-                    long num = Long.parseLong(acumulador.toString().trim());
+
+                    String Num = String.valueOf(acumulador.toString());
+                    long num = Long.parseLong(Num);
 
                     if(calculos.esCompuesto(num)){
                         usuarioCalcular.setText("El numero es compuesto");
 
                     }
 
-                    else if (calculos.esPrimo(num)) {
+                    else if (!calculos.esPrimo(num)) {
+                        usuarioCalcular.setText("El numero es impar");
+                    }
+
+                    else if(calculos.esPrimo(num)){
                         usuarioCalcular.setText("El numero es primo");
                     }
 
