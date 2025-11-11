@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.LinkedList;
 
 public class Calculos {
-    LinkedList<Long> numeros = new LinkedList<Long>();
+
 
     public Calculos(){
 
@@ -14,11 +14,11 @@ public class Calculos {
     public boolean esCompuesto(long num){
         if(num % 2 == 0){
             System.out.println("El nunero:" + num + " es compuesto");
-            numerosDivisibles(num);
+            //numerosDivisibles(num);
             return true;
         }
         else{
-            esPrimo(num);
+            //esPrimo(num);
         }
 
         return false;
@@ -51,9 +51,8 @@ public class Calculos {
         return true;
     }
 
-
     public boolean esPrimo(long num){
-        if(num <= 1){
+        if(num < 1){
             return false;
         }
 

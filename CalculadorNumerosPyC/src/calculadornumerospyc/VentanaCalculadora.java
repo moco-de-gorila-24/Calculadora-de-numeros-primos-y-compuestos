@@ -5,6 +5,8 @@
 package calculadornumerospyc;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -16,9 +18,9 @@ public class VentanaCalculadora extends JFrame {
     
     public VentanaCalculadora(){
         setTitle("Calculadora Numeros Primos y Compuestos");
-        setSize(1200,900);
+        setSize(1200,800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
+        setResizable(true);
         setLocationRelativeTo(null);
         iniciarComponentes();
    
@@ -64,22 +66,22 @@ public class VentanaCalculadora extends JFrame {
         JButton btnBorrar = new JButton("DEL"); //al darle click borra el ultimo numero ingresado
         
         //especificaciones de los botones
-        btnCero.setFont(new Font("Arial", Font.BOLD, 70));
-        btnUno.setFont(new Font("Arial", Font.BOLD, 70));
-        btnDos.setFont(new Font("Arial", Font.BOLD, 70));
-        btnTres.setFont(new Font("Arial", Font.BOLD, 70));
-        btnCuatro.setFont(new Font("Arial", Font.BOLD, 70));
-        btnCinco.setFont(new Font("Arial", Font.BOLD, 70));
-        btnSeis.setFont(new Font("Arial", Font.BOLD, 70));
-        btnSiete.setFont(new Font("Arial", Font.BOLD, 70));
-        btnOcho.setFont(new Font("Arial", Font.BOLD, 70));
-        btnNueve.setFont(new Font("Arial", Font.BOLD, 70));
-        btnSumar.setFont(new Font("Arial", Font.BOLD, 70));
-        btnRestar.setFont(new Font("Arial", Font.BOLD, 70));
-        btnDividir.setFont(new Font("Arial", Font.BOLD, 70));
-        btnMultiplicar.setFont(new Font("Arial", Font.BOLD, 70));
-        btnResultado.setFont(new Font("Arial", Font.BOLD, 70));
-        btnBorrar.setFont(new Font("Arial", Font.BOLD, 40));
+        btnCero.setFont(new Font("Arial", Font.BOLD, 65));
+        btnUno.setFont(new Font("Arial", Font.BOLD, 65));
+        btnDos.setFont(new Font("Arial", Font.BOLD, 65));
+        btnTres.setFont(new Font("Arial", Font.BOLD, 65));
+        btnCuatro.setFont(new Font("Arial", Font.BOLD, 65));
+        btnCinco.setFont(new Font("Arial", Font.BOLD, 65));
+        btnSeis.setFont(new Font("Arial", Font.BOLD, 60));
+        btnSiete.setFont(new Font("Arial", Font.BOLD, 60));
+        btnOcho.setFont(new Font("Arial", Font.BOLD, 60));
+        btnNueve.setFont(new Font("Arial", Font.BOLD, 60));
+        btnSumar.setFont(new Font("Arial", Font.BOLD, 60));
+        btnRestar.setFont(new Font("Arial", Font.BOLD, 60));
+        btnDividir.setFont(new Font("Arial", Font.BOLD, 60));
+        btnMultiplicar.setFont(new Font("Arial", Font.BOLD, 60));
+        btnResultado.setFont(new Font("Arial", Font.BOLD, 60));
+        btnBorrar.setFont(new Font("Arial", Font.BOLD, 35));
         
         //ESPECIFICACIONES LABELS
         ingresarDirecto.setFont(new Font("Arial", Font.BOLD, 55));
@@ -143,7 +145,231 @@ public class VentanaCalculadora extends JFrame {
         
         //LOCALIZACION TERMINAL
         scrollTerminal.setBounds(650, 310, 500, 520);
-        
+
+        StringBuilder acumulador = new StringBuilder();
+        btnCero.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("0");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+
+            }
+        });
+
+        btnUno.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("1");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+
+            }
+        });
+
+        btnDos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("2");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+            }
+        });
+
+        btnTres.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("3");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+            }
+        });
+
+        btnCuatro.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("4");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+            }
+        });
+
+        btnCinco.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("5");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+            }
+        });
+
+        btnSeis.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("6");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+            }
+        });
+
+        btnSiete.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("7");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+            }
+        });
+
+        btnOcho.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("8");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+            }
+        });
+
+        btnNueve.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("9");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+            }
+        });
+
+        btnBorrar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("");
+                usuarioCalcular.setText("");
+                terminal.setText("");
+                acumulador.setLength(0);
+            }
+        });
+
+        btnSumar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("+");
+                String nuevoTexto = usuarioIngresar.getText();
+                Calculos calculos = new Calculos();
+
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+
+                }
+
+                if(nuevoTexto.endsWith("+")){
+                    //Validacion para que no se repita el signo de suma y seguir con los demas signos
+                }
+
+
+            }
+        });
+
+        btnRestar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("-");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+            }
+        });
+
+        btnMultiplicar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("*");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+            }
+        });
+
+        btnDividir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                usuarioIngresar.setText("/");
+                String nuevoTexto = usuarioIngresar.getText();
+                if (!nuevoTexto.isEmpty()) {
+                    acumulador.append(nuevoTexto).append("\n"); // concatena
+                    usuarioIngresar.setText(acumulador.toString());    // actualiza JTextArea
+                }
+            }
+        });
+
+        btnResultado.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Calculos calculos = new Calculos();
+
+                try{
+                    if(usuarioIngresar.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(null, "No puede dejar este campo vacio");
+                        return;
+                    }
+                    long num = Long.parseLong(acumulador.toString().trim());
+
+                    if(calculos.esCompuesto(num)){
+                        usuarioCalcular.setText("El numero es compuesto");
+
+                    }
+
+                    else if (calculos.esPrimo(num)) {
+                        usuarioCalcular.setText("El numero es primo");
+                    }
+
+                }
+                catch(NumberFormatException ex){
+                    JOptionPane.showMessageDialog(null, "Debe ingresar un numero positivo");
+                }
+
+
+            }
+        });
+
+
+
+
         //Agregamos botones
         panelPrincipal.add(btnCero);
         panelPrincipal.add(btnUno);
